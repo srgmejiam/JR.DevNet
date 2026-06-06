@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            panel2 = new Panel();
-            button2 = new Button();
-            textBox2 = new TextBox();
             lblTitulo = new Label();
-            lblUsuario = new Label();
-            textBox1 = new TextBox();
+            panel2 = new Panel();
+            btnIniciarSesion = new Button();
+            txtPassword = new TextBox();
+            txtUsuario = new TextBox();
             label1 = new Label();
             panel1 = new Panel();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
+            btnCancelar = new Button();
+            lblUsuario = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -50,14 +48,13 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(panel2, 1, 5);
-            tableLayoutPanel1.Controls.Add(textBox2, 0, 4);
             tableLayoutPanel1.Controls.Add(lblTitulo, 0, 0);
-            tableLayoutPanel1.Controls.Add(lblUsuario, 0, 1);
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 2);
+            tableLayoutPanel1.Controls.Add(panel2, 1, 5);
+            tableLayoutPanel1.Controls.Add(txtPassword, 0, 4);
+            tableLayoutPanel1.Controls.Add(txtUsuario, 0, 2);
             tableLayoutPanel1.Controls.Add(label1, 0, 3);
             tableLayoutPanel1.Controls.Add(panel1, 0, 5);
-            tableLayoutPanel1.Controls.Add(dataGridView1, 0, 6);
+            tableLayoutPanel1.Controls.Add(lblUsuario, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -73,36 +70,6 @@
             tableLayoutPanel1.Size = new Size(770, 458);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(button2);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(388, 229);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(359, 90);
-            panel2.TabIndex = 6;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button2.Location = new Point(111, 29);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 0;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            tableLayoutPanel1.SetColumnSpan(textBox2, 2);
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(23, 178);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(724, 40);
-            textBox2.TabIndex = 4;
-            // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
@@ -117,28 +84,49 @@
             lblTitulo.Text = "Login";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblUsuario
+            // panel2
             // 
-            lblUsuario.AutoSize = true;
-            tableLayoutPanel1.SetColumnSpan(lblUsuario, 2);
-            lblUsuario.Dock = DockStyle.Fill;
-            lblUsuario.Font = new Font("Comic Sans MS", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsuario.Location = new Point(23, 46);
-            lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(724, 43);
-            lblUsuario.TabIndex = 1;
-            lblUsuario.Text = "Usuario:";
-            lblUsuario.TextAlign = ContentAlignment.BottomLeft;
+            panel2.Controls.Add(btnIniciarSesion);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(388, 229);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(359, 90);
+            panel2.TabIndex = 6;
             // 
-            // textBox1
+            // btnIniciarSesion
             // 
-            tableLayoutPanel1.SetColumnSpan(textBox1, 2);
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(23, 92);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(724, 40);
-            textBox1.TabIndex = 2;
+            btnIniciarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnIniciarSesion.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnIniciarSesion.Location = new Point(96, 29);
+            btnIniciarSesion.Name = "btnIniciarSesion";
+            btnIniciarSesion.Size = new Size(161, 29);
+            btnIniciarSesion.TabIndex = 0;
+            btnIniciarSesion.Text = "Iniciar Sesión";
+            btnIniciarSesion.UseVisualStyleBackColor = true;
+            btnIniciarSesion.Click += btnIniciarSesion_Click;
+            // 
+            // txtPassword
+            // 
+            tableLayoutPanel1.SetColumnSpan(txtPassword, 2);
+            txtPassword.Dock = DockStyle.Fill;
+            txtPassword.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Location = new Point(23, 178);
+            txtPassword.MaxLength = 1024;
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(724, 40);
+            txtPassword.TabIndex = 4;
+            // 
+            // txtUsuario
+            // 
+            tableLayoutPanel1.SetColumnSpan(txtUsuario, 2);
+            txtUsuario.Dock = DockStyle.Fill;
+            txtUsuario.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsuario.Location = new Point(23, 92);
+            txtUsuario.MaxLength = 50;
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(724, 40);
+            txtUsuario.TabIndex = 2;
             // 
             // label1
             // 
@@ -152,35 +140,38 @@
             label1.TabIndex = 3;
             label1.Text = "Contraseña";
             label1.TextAlign = ContentAlignment.BottomLeft;
-            label1.Click += label1_Click;
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnCancelar);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(23, 229);
             panel1.Name = "panel1";
             panel1.Size = new Size(359, 90);
             panel1.TabIndex = 5;
             // 
-            // button1
+            // btnCancelar
             // 
-            button1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            button1.Location = new Point(111, 29);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnCancelar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnCancelar.Location = new Point(86, 29);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(175, 29);
+            btnCancelar.TabIndex = 0;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // lblUsuario
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(23, 325);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(300, 110);
-            dataGridView1.TabIndex = 7;
+            lblUsuario.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(lblUsuario, 2);
+            lblUsuario.Dock = DockStyle.Fill;
+            lblUsuario.Font = new Font("Comic Sans MS", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsuario.Location = new Point(23, 46);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(724, 43);
+            lblUsuario.TabIndex = 1;
+            lblUsuario.Text = "Usuario:";
+            lblUsuario.TextAlign = ContentAlignment.BottomLeft;
             // 
             // Login
             // 
@@ -198,7 +189,6 @@
             tableLayoutPanel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -207,13 +197,12 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label lblTitulo;
         private Label lblUsuario;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsuario;
+        private TextBox txtPassword;
         private Label label1;
         private Panel panel1;
-        private Button button1;
+        private Button btnCancelar;
         private Panel panel2;
-        private Button button2;
-        private DataGridView dataGridView1;
+        private Button btnIniciarSesion;
     }
 }

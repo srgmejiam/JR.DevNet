@@ -18,5 +18,6 @@ namespace DAL
             base.OnConfiguring(optionsBuilder.UseSqlServer("Server=THINKPAD\\SQL2022;Database=PostMain;Trusted_Connection=true;trustservercertificate=true"));
         }
         public DbSet<EL.Usuarios> Usuarios { get; set; }
+        public DbSet<EL.Parametros> Parametros { get; set; }
     }
 }
