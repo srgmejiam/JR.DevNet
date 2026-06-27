@@ -57,8 +57,9 @@
             tableLayoutPanel1.Controls.Add(lblUsuario, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.Padding = new Padding(20);
+            tableLayoutPanel1.Padding = new Padding(18, 15, 18, 15);
             tableLayoutPanel1.RowCount = 7;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.30027437F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.5263157F));
@@ -67,7 +68,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12.4401913F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 23.4449768F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 27.272728F));
-            tableLayoutPanel1.Size = new Size(770, 458);
+            tableLayoutPanel1.Size = new Size(674, 344);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // lblTitulo
@@ -77,9 +78,9 @@
             lblTitulo.Dock = DockStyle.Fill;
             lblTitulo.Font = new Font("Arial Black", 14F);
             lblTitulo.ForeColor = Color.Blue;
-            lblTitulo.Location = new Point(23, 20);
+            lblTitulo.Location = new Point(21, 15);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(724, 26);
+            lblTitulo.Size = new Size(632, 19);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Login";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
@@ -88,18 +89,20 @@
             // 
             panel2.Controls.Add(btnIniciarSesion);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(388, 229);
+            panel2.Location = new Point(340, 171);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(359, 90);
+            panel2.Size = new Size(313, 68);
             panel2.TabIndex = 6;
             // 
             // btnIniciarSesion
             // 
             btnIniciarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnIniciarSesion.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnIniciarSesion.Location = new Point(96, 29);
+            btnIniciarSesion.Location = new Point(83, 22);
+            btnIniciarSesion.Margin = new Padding(3, 2, 3, 2);
             btnIniciarSesion.Name = "btnIniciarSesion";
-            btnIniciarSesion.Size = new Size(161, 29);
+            btnIniciarSesion.Size = new Size(141, 22);
             btnIniciarSesion.TabIndex = 0;
             btnIniciarSesion.Text = "Iniciar Sesión";
             btnIniciarSesion.UseVisualStyleBackColor = true;
@@ -110,22 +113,25 @@
             tableLayoutPanel1.SetColumnSpan(txtPassword, 2);
             txtPassword.Dock = DockStyle.Fill;
             txtPassword.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(23, 178);
+            txtPassword.Location = new Point(21, 133);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.MaxLength = 1024;
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(724, 40);
+            txtPassword.Size = new Size(632, 33);
             txtPassword.TabIndex = 4;
+            txtPassword.KeyPress += txtPassword_KeyPress;
             // 
             // txtUsuario
             // 
             tableLayoutPanel1.SetColumnSpan(txtUsuario, 2);
             txtUsuario.Dock = DockStyle.Fill;
             txtUsuario.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsuario.Location = new Point(23, 92);
+            txtUsuario.Location = new Point(21, 68);
+            txtUsuario.Margin = new Padding(3, 2, 3, 2);
             txtUsuario.MaxLength = 50;
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(724, 40);
+            txtUsuario.Size = new Size(632, 33);
             txtUsuario.TabIndex = 2;
             // 
             // label1
@@ -134,9 +140,9 @@
             tableLayoutPanel1.SetColumnSpan(label1, 2);
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Comic Sans MS", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(23, 110);
+            label1.Location = new Point(21, 82);
             label1.Name = "label1";
-            label1.Size = new Size(724, 65);
+            label1.Size = new Size(632, 49);
             label1.TabIndex = 3;
             label1.Text = "Contraseña";
             label1.TextAlign = ContentAlignment.BottomLeft;
@@ -145,17 +151,19 @@
             // 
             panel1.Controls.Add(btnCancelar);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(23, 229);
+            panel1.Location = new Point(21, 171);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(359, 90);
+            panel1.Size = new Size(313, 68);
             panel1.TabIndex = 5;
             // 
             // btnCancelar
             // 
             btnCancelar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnCancelar.Location = new Point(86, 29);
+            btnCancelar.Location = new Point(75, 22);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(175, 29);
+            btnCancelar.Size = new Size(153, 22);
             btnCancelar.TabIndex = 0;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -166,20 +174,21 @@
             tableLayoutPanel1.SetColumnSpan(lblUsuario, 2);
             lblUsuario.Dock = DockStyle.Fill;
             lblUsuario.Font = new Font("Comic Sans MS", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsuario.Location = new Point(23, 46);
+            lblUsuario.Location = new Point(21, 34);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(724, 43);
+            lblUsuario.Size = new Size(632, 32);
             lblUsuario.TabIndex = 1;
             lblUsuario.Text = "Usuario:";
             lblUsuario.TextAlign = ContentAlignment.BottomLeft;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(770, 458);
+            ClientSize = new Size(674, 344);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;

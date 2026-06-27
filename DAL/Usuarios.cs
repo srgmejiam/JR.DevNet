@@ -42,14 +42,18 @@ namespace DAL
             var user = db.Usuarios.SingleOrDefault(u => u.UserName == username);
             if (user != null)
             {
-                if(user.Intentos < Parametros.IntentosFallidos())
+                if (user.Intentos < (Parametros.IntentosFallidos() - 1))
                 {
                     user.Intentos++;
                     db.SaveChanges();
                     return true;
                 }
+                user.Intentos++;
                 user.Bloqueado = true;
-                db.SaveChanges();
+                if (db.SaveChanges() > 0)
+                {
+                    //mandar email de bloqueo
+                }
                 return false;
             }
             return false;
@@ -64,12 +68,18 @@ namespace DAL
             }
             return true;
         }
-
-
-
-
-
-
+        public static bool ResetIntentos(string username)
+        {
+            using var db = new BD();
+            var user = db.Usuarios.SingleOrDefault(u => u.UserName == username);
+            if (user != null)
+            {
+                user.Intentos = 0;
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
 
         public static string DeleteSqlInjection(string input)
         {
